@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Documents_Kylosov.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,11 +21,35 @@ namespace Documents_Kylosov.Elements
     /// <summary>
     /// Логика взаимодействия для ItemUser.xaml
     /// </summary>
-    public partial class ItemUser : Page
+    public partial class ItemUser : UserControl
     {
-        public ItemUser()
+        string user;
+        public ItemUser(string user)
         {
             InitializeComponent();
+
+            IUser.Content = $"{user}";
+        }
+
+        private void EditDocument(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.frame.Navigate(new Pages.AddUser(user));
+        }
+
+        private void DeleteDocument(object sender, RoutedEventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach (var item in MainWindow.init.AllUser)
+                if(user != item)
+                    list.Add(item);
+
+            OleDbConnection connection = Classes.Common.DBConnection.Connection();
+            Classes.Common.DBConnection.Query($"DELETE FROM [Ответственные] WHERE [ФИО] = {user}", connection);
+            Classes.Common.DBConnection.CloseConnection(connection);
+
+            user = "";
+
+            MainWindow.init.frame.Navigate(MainWindow.pages.main);
         }
     }
 }

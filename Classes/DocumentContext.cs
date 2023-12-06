@@ -6,16 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace Documents_Kylosov.Classes
 {
     public class DocumentContext : Model.Document, Interfaces.IDocument
@@ -71,7 +61,6 @@ namespace Documents_Kylosov.Classes
                 Common.DBConnection.CloseConnection(connection);
             }
         }
-
         public void Delete()
         {
             OleDbConnection connection = Common.DBConnection.Connection();
