@@ -33,7 +33,7 @@
             <Label Content="Укажите наименование:" VerticalAlignment="Top" Margin="0,20,0,0" Grid.Column="1"/>
             <TextBox x:Name="tb_name" VerticalAlignment="Top" Height="25" Margin="0,45,10,0" Grid.Column="1"/>
             <Label Content="Укажите ответственного:" VerticalAlignment="Top" Margin="0,70,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_user" Grid.Column="1" Margin="0,96,10,198" />
+            <ComboBox x:Name="tb_user" Grid.Column="1" Margin="0,96,10,198" />
             <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="0,120,0,0" Grid.Column="1"/>
             <TextBox x:Name="tb_id" VerticalAlignment="Top" Height="25" Margin="0,145,10,0" Grid.Column="1"/>
             <Label Content="Укажите дату поступлеия:" VerticalAlignment="Top" Margin="0,170,0,0" Grid.Column="1"/>

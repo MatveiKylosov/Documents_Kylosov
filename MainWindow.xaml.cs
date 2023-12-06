@@ -22,6 +22,7 @@ namespace Documents_Kylosov
     {
         public static MainWindow init;
         public List<Classes.DocumentContext> AllDocuments = new Classes.DocumentContext().AllDocuments();
+        public List<string> AllUser = new List<string>();
         public enum pages
         {
             main, add
@@ -38,6 +39,10 @@ namespace Documents_Kylosov
         public MainWindow()
         {
             InitializeComponent();
+            foreach (Classes.DocumentContext context in AllDocuments)
+                 if (AllUser.Count == 0 || AllUser.Find(x=> context.user != x).Length == 0)
+                    AllUser.Add(context.user);
+      
             init = this;
             OpenPages(pages.main);
         }

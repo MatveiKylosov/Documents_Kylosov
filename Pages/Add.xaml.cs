@@ -39,7 +39,12 @@ namespace Documents_Kylosov.Pages
                 }
 
                 tb_name.Text = this.Document.name;
-                tb_user.Text = this.Document.user;
+
+                foreach (var item in MainWindow.init.AllUser)
+                        tb_user.Items.Add(item);
+
+                tb_user.SelectedItem = this.Document.user;
+
                 tb_id.Text = $"{this.Document.id_document}";
                 tb_date.Text = this.Document.date.ToString("dd.MM.yyyy");
                 tb_status.SelectedIndex = this.Document.status;
