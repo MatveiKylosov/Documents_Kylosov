@@ -40,7 +40,7 @@ namespace Documents_Kylosov.Pages
 
                 tb_name.Text = this.Document.name;
                 tb_user.Text = this.Document.user;
-                tb_id.Text = this.Document.id_document;
+                tb_id.Text = $"{this.Document.id_document}";
                 tb_date.Text = this.Document.date.ToString("dd.MM.yyyy");
                 tb_status.SelectedIndex = this.Document.status;
                 tb_vector.Text = this.Document.vector;
@@ -110,7 +110,7 @@ namespace Documents_Kylosov.Pages
                 newDocument.src = s_src;
                 newDocument.name = tb_name.Text;
                 newDocument.user = tb_user.Text;
-                newDocument.id_document = tb_id.Text;
+                newDocument.id_document = (tb_id.Text);
 
                 DateTime newDate = new DateTime();
                 DateTime.TryParse(tb_date.Text, out newDate);
@@ -127,7 +127,7 @@ namespace Documents_Kylosov.Pages
                 newDocument.id = Document.id;
                 newDocument.name = tb_name.Text;
                 newDocument.user = tb_user.Text;
-                newDocument.id_document = tb_id.Text;
+                newDocument.id_document = (tb_id.Text);
 
                 DateTime newDate = new DateTime();
                 DateTime.TryParse(tb_date.Text, out newDate);

@@ -6,6 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
 namespace Documents_Kylosov.Classes
 {
     public class DocumentContext : Model.Document, Interfaces.IDocument
@@ -14,19 +24,20 @@ namespace Documents_Kylosov.Classes
         {
             List<DocumentContext> allDocuments = new List<DocumentContext>();
             OleDbConnection connection = Common.DBConnection.Connection();
-            OleDbDataReader dataDocuments = Common.DBConnection.Query("SELECT * FROM [ДOKументы]", connection); while (dataDocuments.Read())
+            OleDbDataReader dataDocuments = Common.DBConnection.Query("SELECT * FROM [Документы]", connection); 
+            while (dataDocuments.Read())
             {
+                DocumentContext newDocument = new DocumentContext();
+                newDocument.id = dataDocuments.GetInt32(0);
+                newDocument.src = dataDocuments.GetString(1);
+                newDocument.name = dataDocuments.GetString(2);
+                newDocument.user = dataDocuments.GetString(3);
+                newDocument.id_document = dataDocuments.GetString(4);
+                newDocument.date = dataDocuments.GetDateTime(5);
+                newDocument.status = dataDocuments.GetInt32(6);
+                newDocument.vector = dataDocuments.GetString(7);
+                allDocuments.Add(newDocument);
             }
-            DocumentContext newDocument = new DocumentContext();
-            newDocument.id = dataDocuments.GetInt32(0);
-            newDocument.src = dataDocuments.GetString(1);
-            newDocument.name = dataDocuments.GetString(2);
-            newDocument.user = dataDocuments.GetString(3);
-            newDocument.id_document = dataDocuments.GetInt32(4);
-            newDocument.date = dataDocuments.GetDateTime(5);
-            newDocument.status = dataDocuments.GetInt32(6);
-            newDocument.vector = dataDocuments.GetString(7);
-            allDocuments.Add(newDocument);
             Common.DBConnection.CloseConnection(connection);
             return allDocuments;
         }

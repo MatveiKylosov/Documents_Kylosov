@@ -9,7 +9,7 @@ namespace Documents_Kylosov.Classes.Common
 {
     public class DBConnection
     {
-        public static readonly string Path = @"C:\Users\aooshchepkov\Desktop\Pup.accdb";
+        public static readonly string Path = @"C:\Users\matve\Desktop\Documents_Kylosov\Database.accdb";
         public static OleDbConnection Connection()
         {
             OleDbConnection oleDbConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Path);

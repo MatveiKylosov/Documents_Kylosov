@@ -12,7 +12,7 @@ namespace Documents_Kylosov.Model
         public string src;
         public string name;
         public string user;
-        public int id_document;
+        public string id_document;
         public DateTime date;
         public int status;
         public string vector;

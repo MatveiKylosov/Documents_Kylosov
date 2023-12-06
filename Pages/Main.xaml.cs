@@ -23,6 +23,24 @@ namespace Documents_Kylosov.Pages
         public Main()
         {
             InitializeComponent();
+            CreatedUI();
+        }
+
+        public void CreatedUI()
+        {
+            parent.Children.Clear();
+            foreach (Classes.DocumentContext document in MainWindow.init.AllDocuments)
+                parent.Children.Add(new Elements.Item(document));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.OpenPages(MainWindow.pages.add);
         }
     }
 }

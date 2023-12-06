@@ -11,13 +11,17 @@
         <Grid Background="Gray" Margin="0,0,0,370">
             <Image Source="C:\Users\matve\Desktop\Documents_Kylosov\Image\icon.png" Height="50" Width="50" Margin="20,15,740,15"/>
             <Label Content="Учёт входящих и исходящих документов" Foreground="White" FontSize="16" FontWeight="Bold" Margin="75,18,385,22"/>
-            <Button Content="Выйти" Margin="646,10,10,42"/>
+            <Button Content="Выйти" Margin="646,10,10,42" Click="Button_Click"/>
         </Grid>
 
         <Grid Background="white" Margin="0,80,0,0">
-            <ListBox Margin="10,21,10,47"/>
+            <ScrollViewer VerticalAlignment="Top" Margin="10,10,10,0" Height="310">
+                <StackPanel x:Name="parent">
+
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
 
-        <Button Content="Добавить" Margin="10,411,694,10"/>
+        <Button Content="Добавить" Margin="10,411,694,10" Click="Button_Click_1"/>
     </Grid>
 </Page>

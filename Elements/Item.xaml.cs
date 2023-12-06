@@ -31,11 +31,11 @@ namespace Documents_Kylosov.Elements
             img.Source = new BitmapImage(new Uri(Document.src));
             // Выводим данные
             IName.Content = Document.name;
-            IUser.Content = $"Ответственный: {Document.user}";
-            ICode.Content = $"Код документа: {Document.id_document}";
-            IDate.Content = $"Дата поступления {Document.date.ToString("dd.MM.yyyy")}";
-            IStatus.Content = Document.status == 0 ? $"Статус: входящий" : $"Статус: исходящий";
-            IDirect.Content = "Направление: " + Document.vector;
+            IUser.Content = $"{Document.user}";
+            ICode.Content = $"{Document.id_document}";
+            IDate.Content = $"{Document.date.ToString("dd.MM.yyyy")}";
+            IStatus.Content = Document.status == 0 ? $"входящий" : $"исходящий";
+            IDirect.Content = Document.vector;
             // Сохраняем документ для изменения или удаления
             this.Document = Document;
         }
