@@ -8,20 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Add">
 
-    <Grid Background="#cec5c4">
+    <Grid>
         <Grid VerticalAlignment="Top" Height="80" Background="Gray">
-            <Image Source="/Image/icon.png" Width="50" Height="50" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+            <Image Source="/Image/icon.png" Height="50" Margin="30,15,720,15"/>
             <Label Content="Добавить документ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="100,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"/>
-            <Button Background="White" Width="102" Height="36" Content="Вернуться" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="678,0,0,0" Click="Back" RenderTransformOrigin="0.5,0.5">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="1.102"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0.481"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
+            <Button Background="White" Height="36" Content="Вернуться" VerticalAlignment="Top" Margin="678,22,20,0" Click="Back" RenderTransformOrigin="0.5,0.5"/>
         </Grid>
         <Grid Margin="0,80,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>

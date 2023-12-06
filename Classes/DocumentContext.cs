@@ -48,13 +48,13 @@ namespace Documents_Kylosov.Classes
                 OleDbConnection connection = Common.DBConnection.Connection();
                 Common.DBConnection.Query("UPDATE [Документы] " +
                                         "SET " + 
-                                        $"[Изображение]      = '{this.src }', "      +
-                                        $"[Наименование]     = '{this.name}',  "      +
-                                        $"[Ответственный]    = '{this.user}', "       +
-                                        $"[Код документа]    = '{this.id_document}', " +
-                                        $"[Дата поступления] = '{ this.date.ToString("dd.MM.уууу")}', "+
-                                        $"[Статус]           = '{this.status}', " + 
-                                        $"[Направление]      = '{ this.vector}' " +
+                                        $"[Изображение] = '{this.src }', "      +
+                                        $"[Наименование] = '{this.name}',  "      +
+                                        $"[Ответственный] = '{this.user}', "       +
+                                        $"[Код документа] = '{this.id_document}', " +
+                                        $"[Дата поступления] = '{this.date.ToString("dd.MM.yyyy")}', "+
+                                        $"[Статус] = '{this.status}', " + 
+                                        $"[Направление] = '{ this.vector}' " +
                                         $"WHERE [Код] = {this.id}", connection);
                 Common.DBConnection.CloseConnection(connection);
             }

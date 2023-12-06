@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Elements\ItemUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +115,9 @@
     <Compile Include="Classes\DocumentContext.cs" />
     <Compile Include="Elements\Item.xaml.cs">
       <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\ItemUser.xaml.cs">
+      <DependentUpon>ItemUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IDocument.cs" />
     <Compile Include="MainWindow.xaml.cs">
