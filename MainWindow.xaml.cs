@@ -20,9 +20,26 @@ namespace Documents_Kylosov
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow init;
+        public List<Classes.DocumentContext> AllDocuments = new Classes.DocumentContext().AllDocuments();
+        public enum pages
+        {
+            main, add
+        }
+
+        public void OpenPages(pages _pages)
+        {
+            if (_pages == pages.main)
+                frame.Navigate(new Pages.Main());
+            else if (_pages == pages.add)
+                frame.Navigate(new Pages.Add());
+
+        }
         public MainWindow()
         {
             InitializeComponent();
+            init = this;
+            OpenPages(pages.main);
         }
     }
 }

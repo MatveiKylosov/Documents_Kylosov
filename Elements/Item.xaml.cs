@@ -42,7 +42,7 @@ namespace Documents_Kylosov.Elements
 
         private void EditDocument(object sender, RoutedEventArgs e)
         {
-            MainWindow.init.frame.Navigate(new Pages.Add(Document))
+            MainWindow.init.frame.Navigate(new Pages.Add(Document));
         }
 
         private void DeleteDocument(object sender, RoutedEventArgs e)

@@ -21,7 +21,7 @@
         <Label Content="Статус:" FontSize="16" Margin="385,62,0,104" HorizontalAlignment="Left" Width="65"/>
         <Label x:Name="IStatus" Content="Входящий" FontSize="16" Margin="450,62,0,104" HorizontalAlignment="Left" Width="102"/>
 
-        <Label Content="Направление:" FontSize="16" Margin="385,108,0,58" HorizontalAlignment="Left" Width="105"/>
+        <Label Content="Направление:" FontSize="16" Margin="385,108,0,58" HorizontalAlignment="Left" Width="116"/>
         <Label x:Name="IDirect" Content="Строительство" FontSize="16" Margin="495,108,0,58" HorizontalAlignment="Left" Width="108"/>
 
         <Button Click="EditDocument" Content="Изменить" Margin="0,147,170,20" FontSize="16" HorizontalAlignment="Right" Width="135"/>
