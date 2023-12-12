@@ -31,9 +31,6 @@ namespace Documents_Kylosov.Pages
             parent.Children.Clear();
             foreach (Classes.DocumentContext document in MainWindow.init.AllDocuments)
                 parent.Children.Add(new Elements.Item(document));
-
-            foreach (string x in MainWindow.init.AllUser)
-                parent.Children.Add(new Elements.ItemUser(x));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

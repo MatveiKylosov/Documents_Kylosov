@@ -33,18 +33,18 @@ namespace Documents_Kylosov.Classes
         }
         public void Save(bool Update = false)
         {
-            if(Update)
+            if (Update)
             {
                 OleDbConnection connection = Common.DBConnection.Connection();
                 Common.DBConnection.Query("UPDATE [Документы] " +
-                                        "SET " + 
-                                        $"[Изображение] = '{this.src }', "      +
-                                        $"[Наименование] = '{this.name}',  "      +
-                                        $"[Ответственный] = '{this.user}', "       +
+                                        "SET " +
+                                        $"[Изображение] = '{this.src}', " +
+                                        $"[Наименование] = '{this.name}',  " +
+                                        $"[Ответственный] = '{this.user}', " +
                                         $"[Код документа] = '{this.id_document}', " +
-                                        $"[Дата поступления] = '{this.date.ToString("dd.MM.yyyy")}', "+
-                                        $"[Статус] = '{this.status}', " + 
-                                        $"[Направление] = '{ this.vector}' " +
+                                        $"[Дата поступления] = '{this.date.ToString("dd.MM.yyyy")}', " +
+                                        $"[Статус] = '{this.status}', " +
+                                        $"[Направление] = '{this.vector}' " +
                                         $"WHERE [Код] = {this.id}", connection);
                 Common.DBConnection.CloseConnection(connection);
             }
@@ -56,7 +56,7 @@ namespace Documents_Kylosov.Classes
                                         $"[Код документа], [Дата поступления], [Статус], " +
                                         $"[Направление]) VALUES (" +
                                         $"'{this.src}', '{this.name}', '{this.user}'," +
-                                        $"'{this.id_document}', '{this.date.ToString("dd.MM.уууу")}', '{this.status}', '{this.vector}')"
+                                        $"'{this.id_document}', '{this.date.ToString("dd.MM.yyyy")}', '{this.status}', '{this.vector}')"
                                         , connection);
                 Common.DBConnection.CloseConnection(connection);
             }
