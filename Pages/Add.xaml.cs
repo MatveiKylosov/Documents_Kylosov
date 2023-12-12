@@ -30,6 +30,7 @@ namespace Documents_Kylosov.Pages
             InitializeComponent();
             if (Document != null)
             {
+                //файл старый
                 this.Document = Document;
 
                 if (File.Exists(Document.src))
@@ -39,14 +40,9 @@ namespace Documents_Kylosov.Pages
                 }
 
                 tb_name.Text = this.Document.name;
-
-/*                foreach (var item in MainWindow.init.AllUser)
-                        tb_user.Items.Add(item);
-
-                tb_user.SelectedItem = this.Document.user;*/
-
                 tb_id.Text = $"{this.Document.id_document}";
                 tb_date.Text = this.Document.date.ToString("dd.MM.yyyy");
+                tb_userTB.Text = this.Document.user;
                 tb_status.SelectedIndex = this.Document.status;
                 tb_vector.Text = this.Document.vector;
                 bthAdd.Content = "Изменить";
@@ -109,39 +105,23 @@ namespace Documents_Kylosov.Pages
                 MessageBox.Show("Укажите направление");
                 return;
             }
-            if (Document == null)
-            {
-                DocumentContext newDocument = new DocumentContext();
-                newDocument.src = s_src;
-                newDocument.name = tb_name.Text;
-                newDocument.user = tb_userTB.Text;
-                newDocument.id_document = (tb_id.Text);
 
-                DateTime newDate = new DateTime();
-                DateTime.TryParse(tb_date.Text, out newDate);
-                newDocument.date = newDate;
-                newDocument.status = tb_status.SelectedIndex;
-                newDocument.vector = tb_vector.Text;
-                newDocument.Save();
-                MessageBox.Show("Документ добавлен");
-            }
-            else
-            {
-                DocumentContext newDocument = new DocumentContext();
-                newDocument.src = s_src;
-                newDocument.id = Document.id;
-                newDocument.name = tb_name.Text;
-                newDocument.user = tb_userTB.Text;
-                newDocument.id_document = (tb_id.Text);
+            DocumentContext newDocument = new DocumentContext();
+            DateTime newDate = new DateTime();
+            DateTime.TryParse(tb_date.Text, out newDate);
 
-                DateTime newDate = new DateTime();
-                DateTime.TryParse(tb_date.Text, out newDate);
-                newDocument.date = newDate;
-                newDocument.status = tb_status.SelectedIndex;
-                newDocument.vector = tb_vector.Text;
-                newDocument.Save(true);
-                MessageBox.Show("Документ изменён");
-            }
+            newDocument.id = Document == null ? newDocument.id : Document.id;
+            newDocument.src = s_src;
+            newDocument.name = tb_name.Text;
+            newDocument.user = tb_userTB.Text;
+            newDocument.id_document = (tb_id.Text);
+            newDocument.date = newDate;
+            newDocument.status = tb_status.SelectedIndex;
+            newDocument.vector = tb_vector.Text;
+
+            newDocument.Save(!(Document == null));
+            MessageBox.Show((Document == null ? "Документ добавлен" : "Документ изменён"));
+
             MainWindow.init.AllDocuments = new DocumentContext().AllDocuments();
             MainWindow.init.OpenPages(MainWindow.pages.main);
         }
