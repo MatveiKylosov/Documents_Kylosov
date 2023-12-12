@@ -10,19 +10,19 @@
         <Label x:Name="IName" Content="Наименование" FontSize="14" FontWeight="Bold" Margin="117,10,0,157" HorizontalAlignment="Left" Width="127"/>
 
         <Label Content="Ответственный: " FontSize="14" Margin="117,62,0,104" HorizontalAlignment="Left" Width="122"/>
-        <Label x:Name="IUser" Content="" FontSize="14" Margin="233,62,329,104"/>
+        <Label x:Name="IUser" Content="" FontSize="14" Margin="233,62,316,104"/>
 
-        <Label Content="Код документа: " FontSize="14" Margin="125,108,0,58" HorizontalAlignment="Left" Width="122"/>
-        <Label x:Name="ICode" Content="" FontSize="14" Margin="252,108,0,58" HorizontalAlignment="Left" Width="123"/>
+        <Label Content="Код документа: " FontSize="14" Margin="120,108,0,58" HorizontalAlignment="Left" Width="122"/>
+        <Label x:Name="ICode" Content="" FontSize="14" Margin="233,108,0,58" HorizontalAlignment="Left" Width="141"/>
 
         <Label Content="Дата поступления: " FontSize="14" Margin="385,15,0,151" HorizontalAlignment="Left" Width="147"/>
-        <Label x:Name="IDate" Content="" FontSize="14" Margin="532,15,0,151" HorizontalAlignment="Left" Width="142"/>
+        <Label x:Name="IDate" Content="" FontSize="14" Margin="514,15,0,151" HorizontalAlignment="Left" Width="166"/>
 
         <Label Content="Статус:" FontSize="14" Margin="385,62,0,104" HorizontalAlignment="Left" Width="65"/>
-        <Label x:Name="IStatus" Content="" FontSize="14" Margin="450,62,0,104" HorizontalAlignment="Left" Width="142"/>
+        <Label x:Name="IStatus" Content="" FontSize="14" Margin="443,62,0,104" HorizontalAlignment="Left" Width="230"/>
 
         <Label Content="Направление:" FontSize="14" Margin="385,108,0,58" HorizontalAlignment="Left" Width="116"/>
-        <Label x:Name="IDirect" Content="" FontSize="14" Margin="495,108,0,58" HorizontalAlignment="Left" Width="165"/>
+        <Label x:Name="IDirect" Content="" FontSize="14" Margin="501,108,0,58" HorizontalAlignment="Left" Width="172"/>
 
         <Button Click="EditDocument" Content="Изменить" Margin="0,147,170,20" FontSize="14" HorizontalAlignment="Right" Width="135"/>
         <Button Click="DeleteDocument" Content="Удалить" Margin="0,147,30,20" FontSize="14" HorizontalAlignment="Right" Width="135"/>
