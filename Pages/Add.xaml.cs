@@ -70,41 +70,27 @@ namespace Documents_Kylosov.Pages
 
         private void AddDocument(object sender, RoutedEventArgs e)
         {
-            if (s_src.Length == 0)
+            Dictionary<int, string> fields = new Dictionary<int, string>
+                {
+                    { s_src.Length, "Выберите изображение" },
+                    { tb_name.Text.Length, "Укажите наименование" },
+                    { tb_userTB.Text.Length, "Укажите ответственного" },
+                    { tb_id.Text.Length, "Укажите код документа" },
+                    { tb_date.Text.Length, "Укажите дату поступления" },
+                    { tb_status.Text.Length, "Укажите статус" },
+                    { tb_vector.Text.Length, "Укажите направление" }
+                };
+
+            foreach (var field in fields)
             {
-                MessageBox.Show("Выберите изображение");
-                return;
+                if (field.Key == 0)
+                {
+                    MessageBox.Show(field.Value);
+                    return;
+                }
             }
-            if (tb_name.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите наименование");
-                return;
-            }
-            if (tb_userTB.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите ответственного");
-                return;
-            }
-            if (tb_id.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите код документа");
-                return;
-            }
-            if (tb_date.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите дату поступления");
-                return;
-            }
-            if (tb_status.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите статус");
-                return;
-            }
-            if (tb_vector.Text.Length == 0)
-            {
-                MessageBox.Show("Укажите направление");
-                return;
-            }
+
+
 
             DocumentContext newDocument = new DocumentContext();
             DateTime newDate = new DateTime();
