@@ -26,7 +26,7 @@ namespace Documents_Kylosov
 
         public enum pages
         {
-            main, add
+            main, add, users, adduser
         }
 
         public void OpenPages(pages _pages)
@@ -35,8 +35,12 @@ namespace Documents_Kylosov
                 frame.Navigate(new Pages.Main());
             else if (_pages == pages.add)
                 frame.Navigate(new Pages.Add());
-
+            else if (_pages == pages.users)
+                frame.Navigate(new Pages.MainUsers());
+            else if(_pages == pages.adduser)
+                frame.Navigate(new Pages.AddUsers());
         }
+
         public MainWindow()
         {
             InitializeComponent();

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Documents_Kylosov.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Main.xaml
+    /// Логика взаимодействия для MainUsers.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class MainUsers : Page
     {
-        public Main()
+        public MainUsers()
         {
             InitializeComponent();
             CreatedUI();
@@ -29,8 +29,8 @@ namespace Documents_Kylosov.Pages
         public void CreatedUI()
         {
             parent.Children.Clear();
-            foreach (Classes.DocumentContext document in MainWindow.init.AllDocuments)
-                parent.Children.Add(new Elements.Item(document));
+            foreach (Classes.DocumentContext document in MainWindow.init.AllUsers)
+                parent.Children.Add(new Elements.ItemUser(document));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,14 +38,14 @@ namespace Documents_Kylosov.Pages
             MainWindow.init.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainWindow.init.OpenPages(MainWindow.pages.add);
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MainWindow.init.OpenPages(MainWindow.pages.users);
+            MainWindow.init.OpenPages(MainWindow.pages.main);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.OpenPages(MainWindow.pages.adduser);
         }
     }
 }

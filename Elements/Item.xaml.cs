@@ -49,7 +49,7 @@ namespace Documents_Kylosov.Elements
         {
             Document.Delete();
             MainWindow.init.AllDocuments = new Classes.DocumentContext().AllDocuments();
-            MainWindow.init.frame.Navigate(MainWindow.pages.main);
+            MainWindow.init.OpenPages(MainWindow.pages.main);
         }
     }
 }

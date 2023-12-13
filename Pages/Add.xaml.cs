@@ -80,24 +80,35 @@ namespace Documents_Kylosov.Pages
 
         private void AddDocument(object sender, RoutedEventArgs e)
         {
-            Dictionary<int, string> fields = new Dictionary<int, string>
-                {
-                    { s_src.Length, "Выберите изображение" },
-                    { tb_name.Text.Length, "Укажите наименование" },
-                    { tb_user.Text.Length, "Укажите ответственного" },
-                    { tb_id.Text.Length, "Укажите код документа" },
-                    { tb_date.Text.Length, "Укажите дату поступления" },
-                    { tb_status.Text.Length, "Укажите статус" },
-                    { tb_vector.Text.Length, "Укажите направление" }
-                };
-
-            foreach (var field in fields)
+            if (s_src.Length == 0)
             {
-                if (field.Key == 0)
-                {
-                    MessageBox.Show(field.Value);
-                    return;
-                }
+                MessageBox.Show("Выберите изображение");
+                return;
+            }
+            if (tb_name.Text.Length == 0)
+            {
+                MessageBox.Show("Укажите наименование");
+                return;
+            }
+            if (tb_user.Text.Length == 0)
+            {
+                MessageBox.Show("Укажите ответственного");
+                return;
+            }
+            if (tb_id.Text.Length == 0)
+            {
+                MessageBox.Show("Укажите код документа");
+                return;
+            }
+            if (tb_date.Text.Length == 0)
+            {
+                MessageBox.Show("Укажите дату поступления");
+                return;
+            }
+            if (tb_status.Text.Length == 0)
+            {
+                MessageBox.Show("Укажите статус");
+                return;
             }
 
             DocumentContext newDocument = new DocumentContext();

@@ -8,8 +8,8 @@ namespace Documents_Kylosov.Interfaces
 {
     public interface IDocument
     {
-        void Save(bool Update = false);
+        void Save(bool Update = false, bool User = false);
         List<Classes.DocumentContext> AllDocuments();
-        void Delete();
+        void Delete(bool User = false);
     }
 }
