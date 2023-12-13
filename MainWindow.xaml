@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Documents_Kylosov"
         mc:Ignorable="d"
-        Title="Учёт входящих документов" Height="500" Width="850" MinHeight="500" MinWidth="850">
+        Title="Учёт входящих документов" Height="510" Width="850" MinHeight="500" MinWidth="850">
     <Grid>
         <Frame x:Name="frame"/>
     </Grid>

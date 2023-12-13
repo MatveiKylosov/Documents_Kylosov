@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Add">
-    <Grid>
+    <Grid Background="White">
         <Grid VerticalAlignment="Top" Height="80" Background="Gray">
             <Image Source="/Image/icon.png" Height="50" Margin="30,15,0,0" HorizontalAlignment="Left" Width="50" VerticalAlignment="Top"/>
             <Label Content="Добавить документ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="100,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"/>
@@ -18,24 +18,31 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="src" Source="/Image/icon-black.png" Width="200" Height="200" HorizontalAlignment="Left" Margin="30" Grid.Column="0"/>
-            <Button Background="White" Width="96" Content="Выбрать" HorizontalAlignment="Left" Margin="10,265,0,24" Grid.Column="0" Click="SelectImage"/>
-            <Label Content="Укажите наименование:" VerticalAlignment="Top" Margin="0,20,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_name" VerticalAlignment="Top" Height="25" Margin="0,45,10,0" Grid.Column="1"/>
-            <Label Content="Укажите ответственного:" VerticalAlignment="Top" Margin="0,70,0,0" Grid.Column="1"/>
-            <ComboBox x:Name="tb_userCB" Grid.Column="1" Margin="0,96,10,198" Visibility="Hidden"/>
-            <TextBox x:Name="tb_userTB" Grid.Column="1" Margin="0,96,10,198" />
-            <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="0,120,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_id" VerticalAlignment="Top" Height="25" Margin="0,145,10,0" Grid.Column="1"/>
-            <Label Content="Укажите дату поступлеия:" VerticalAlignment="Top" Margin="0,170,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_date" VerticalAlignment="Top" Height="25" Margin="0,195,10,0" Grid.Column="1"/>
-            <Label Content="Укажите статус:" VerticalAlignment="Top" Margin="0,220,0,0" Grid.Column="1"/>
-            <ComboBox x:Name="tb_status" VerticalAlignment="Top" Height="25" Margin="0,245,10,0" Grid.Column="1">
+            <Image x:Name="src" Source="/Image/icon-black.png" Width="200" Height="200" HorizontalAlignment="Left" Margin="30,60,0,0" Grid.Column="0" VerticalAlignment="Top"/>
+            <Button Background="White" Width="96" Content="Выбрать" HorizontalAlignment="Left" Margin="10,265,0,0" Grid.Column="0" Click="SelectImage" Height="31" VerticalAlignment="Top"/>
+
+            <Label Content="Укажите наименование:" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_name" VerticalAlignment="Top" Height="25" Margin="0,31,10,0" Grid.Column="1"/>
+
+            <Label Content="Укажите ответственного:" VerticalAlignment="Top" Margin="0,56,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_user" Grid.Column="1" Margin="0,82,10,0" Height="26" VerticalAlignment="Top" />
+            <ComboBox x:Name="cb_user" Grid.Column="1" Margin="0,113,10,0" Height="26" VerticalAlignment="Top"/>
+
+            <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="0,147,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_id" VerticalAlignment="Top" Height="25" Margin="0,177,10,0" Grid.Column="1"/>
+
+            <Label Content="Укажите дату поступлеия:" VerticalAlignment="Top" Margin="0,202,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_date" VerticalAlignment="Top" Height="25" Margin="0,228,10,0" Grid.Column="1"/>
+
+            <Label Content="Укажите статус:" VerticalAlignment="Top" Margin="0,253,0,0" Grid.Column="1"/>
+            <ComboBox x:Name="tb_status" VerticalAlignment="Top" Height="25" Margin="0,279,10,0" Grid.Column="1">
                 <TextBlock Text="Входящий"/>
                 <TextBlock Text="Исходящий"/>
             </ComboBox>
-            <Label Content="Направление:" VerticalAlignment="Top" Margin="0,270,0,0" Grid.Column="1"/>
-            <Grid Height="25" VerticalAlignment="Top" Margin="0,295,10,0" Grid.Column="1">
+
+            <Label Content="Направление:" VerticalAlignment="Top" Margin="0,309,0,0" Grid.Column="1"/>
+
+            <Grid Height="25" VerticalAlignment="Top" Margin="0,335,10,0" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="100"/>

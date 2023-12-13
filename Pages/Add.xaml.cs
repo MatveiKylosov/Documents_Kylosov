@@ -42,7 +42,7 @@ namespace Documents_Kylosov.Pages
                 tb_name.Text = this.Document.name;
                 tb_id.Text = $"{this.Document.id_document}";
                 tb_date.Text = this.Document.date.ToString("dd.MM.yyyy");
-                tb_userTB.Text = this.Document.user;
+                tb_user.Text = this.Document.user;
                 tb_status.SelectedIndex = this.Document.status;
                 tb_vector.Text = this.Document.vector;
                 bthAdd.Content = "Изменить";
@@ -74,7 +74,7 @@ namespace Documents_Kylosov.Pages
                 {
                     { s_src.Length, "Выберите изображение" },
                     { tb_name.Text.Length, "Укажите наименование" },
-                    { tb_userTB.Text.Length, "Укажите ответственного" },
+                    { tb_user.Text.Length, "Укажите ответственного" },
                     { tb_id.Text.Length, "Укажите код документа" },
                     { tb_date.Text.Length, "Укажите дату поступления" },
                     { tb_status.Text.Length, "Укажите статус" },
@@ -90,8 +90,6 @@ namespace Documents_Kylosov.Pages
                 }
             }
 
-
-
             DocumentContext newDocument = new DocumentContext();
             DateTime newDate = new DateTime();
             DateTime.TryParse(tb_date.Text, out newDate);
@@ -99,7 +97,7 @@ namespace Documents_Kylosov.Pages
             newDocument.id = Document == null ? newDocument.id : Document.id;
             newDocument.src = s_src;
             newDocument.name = tb_name.Text;
-            newDocument.user = tb_userTB.Text;
+            newDocument.user = tb_user.Text;
             newDocument.id_document = (tb_id.Text);
             newDocument.date = newDate;
             newDocument.status = tb_status.SelectedIndex;
