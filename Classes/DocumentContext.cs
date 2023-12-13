@@ -31,6 +31,23 @@ namespace Documents_Kylosov.Classes
             Common.DBConnection.CloseConnection(connection);
             return allDocuments;
         }
+
+        public List<DocumentContext> AllUsers()
+        {
+            List<DocumentContext> AllUsers = new List<DocumentContext>();
+            OleDbConnection connection = Common.DBConnection.Connection();
+            OleDbDataReader dataDocuments = Common.DBConnection.Query("SELECT * FROM [Ответственные]", connection);
+            while (dataDocuments.Read())
+            {
+                DocumentContext newDocument = new DocumentContext();
+                newDocument.id = dataDocuments.GetInt32(0);
+                newDocument.user = dataDocuments.GetString(1);
+                AllUsers.Add(newDocument);
+            }
+            Common.DBConnection.CloseConnection(connection);
+            return AllUsers;
+        }
+
         public void Save(bool Update = false)
         {
             if (Update)

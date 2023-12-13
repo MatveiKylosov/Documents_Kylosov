@@ -28,9 +28,9 @@ namespace Documents_Kylosov.Pages
         public Add(Model.Document Document = null)
         {
             InitializeComponent();
+
             if (Document != null)
             {
-                //файл старый
                 this.Document = Document;
 
                 if (File.Exists(Document.src))
@@ -43,10 +43,20 @@ namespace Documents_Kylosov.Pages
                 tb_id.Text = $"{this.Document.id_document}";
                 tb_date.Text = this.Document.date.ToString("dd.MM.yyyy");
                 tb_user.Text = this.Document.user;
+                
+                if(MainWindow.init.AllUsers.Find(x => x.user == this.Document.user) == null)
+                {
+                    cb_user.Items.Add(this.Document.user);
+                    cb_user.SelectedIndex = 0;
+                }
+
                 tb_status.SelectedIndex = this.Document.status;
                 tb_vector.Text = this.Document.vector;
                 bthAdd.Content = "Изменить";
             }
+
+            foreach (var x in MainWindow.init.AllUsers)
+                cb_user.Items.Add(x.user);
         }
 
         private void Back(object sender, RoutedEventArgs e)
@@ -109,5 +119,7 @@ namespace Documents_Kylosov.Pages
             MainWindow.init.AllDocuments = new DocumentContext().AllDocuments();
             MainWindow.init.OpenPages(MainWindow.pages.main);
         }
+
+        private void cb_user_SelectionChanged(object sender, SelectionChangedEventArgs e) => tb_user.Text = cb_user.SelectedItem.ToString();
     }
 }

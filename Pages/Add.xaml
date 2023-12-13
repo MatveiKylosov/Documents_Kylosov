@@ -26,23 +26,23 @@
 
             <Label Content="Укажите ответственного:" VerticalAlignment="Top" Margin="0,56,0,0" Grid.Column="1"/>
             <TextBox x:Name="tb_user" Grid.Column="1" Margin="0,82,10,0" Height="26" VerticalAlignment="Top" />
-            <ComboBox x:Name="cb_user" Grid.Column="1" Margin="0,113,10,0" Height="26" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cb_user" Grid.Column="1" Margin="0,113,10,0" Height="26" VerticalAlignment="Top" SelectionChanged="cb_user_SelectionChanged"/>
 
-            <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="0,147,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_id" VerticalAlignment="Top" Height="25" Margin="0,177,10,0" Grid.Column="1"/>
+            <Label Content="Укажите код документа:" VerticalAlignment="Top" Margin="0,139,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_id" VerticalAlignment="Top" Height="25" Margin="0,165,10,0" Grid.Column="1"/>
 
-            <Label Content="Укажите дату поступлеия:" VerticalAlignment="Top" Margin="0,202,0,0" Grid.Column="1"/>
-            <TextBox x:Name="tb_date" VerticalAlignment="Top" Height="25" Margin="0,228,10,0" Grid.Column="1"/>
+            <Label Content="Укажите дату поступлеия:" VerticalAlignment="Top" Margin="0,190,0,0" Grid.Column="1"/>
+            <TextBox x:Name="tb_date" VerticalAlignment="Top" Height="25" Margin="0,216,10,0" Grid.Column="1"/>
 
-            <Label Content="Укажите статус:" VerticalAlignment="Top" Margin="0,253,0,0" Grid.Column="1"/>
-            <ComboBox x:Name="tb_status" VerticalAlignment="Top" Height="25" Margin="0,279,10,0" Grid.Column="1">
+            <Label Content="Укажите статус:" VerticalAlignment="Top" Margin="0,242,0,0" Grid.Column="1"/>
+            <ComboBox x:Name="tb_status" VerticalAlignment="Top" Height="25" Margin="0,270,10,0" Grid.Column="1">
                 <TextBlock Text="Входящий"/>
                 <TextBlock Text="Исходящий"/>
             </ComboBox>
 
-            <Label Content="Направление:" VerticalAlignment="Top" Margin="0,309,0,0" Grid.Column="1"/>
+            <Label Content="Направление:" VerticalAlignment="Top" Margin="0,295,0,0" Grid.Column="1"/>
 
-            <Grid Height="25" VerticalAlignment="Top" Margin="0,335,10,0" Grid.Column="1">
+            <Grid Height="25" VerticalAlignment="Top" Margin="0,320,10,0" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="100"/>
